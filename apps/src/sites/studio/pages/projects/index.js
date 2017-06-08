@@ -8,7 +8,7 @@ import PublicGallery from '@cdo/apps/templates/projects/PublicGallery';
 import ProjectHeader from '@cdo/apps/templates/projects/ProjectHeader';
 import i18n from '@cdo/locale';
 import { MAX_PROJECTS_PER_CATEGORY, Galleries } from '@cdo/apps/templates/projects/projectConstants';
-import { selectGallery, setProjectLists } from '@cdo/apps/templates/projects/projectsModule';
+import { selectGallery, setProjectLists, addNewerProjects } from '@cdo/apps/templates/projects/projectsModule';
 
 $(document).ready(() => {
   // We need to see whether the experiment is enabled from angularProjects.js,
@@ -66,6 +66,14 @@ function onShowConfirmPublishDialog(callback) {
 // Make this method available to angularProjects.js. This can go away
 // once My Projects is moved to React.
 window.onShowConfirmPublishDialog = onShowConfirmPublishDialog;
+
+function showNewPublishedProject(projectData, projectType) {
+  getStore().dispatch(addNewerProjects([projectData], projectType));
+}
+
+// Make this method available to angularProjects.js. This can go away
+// once My Projects is moved to React.
+window.showNewPublishedProject = showNewPublishedProject.bind(this);
 
 function onConfirmPublish(callback) {
   hideDialog();
