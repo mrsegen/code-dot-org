@@ -613,7 +613,7 @@ export const install = (blockly, blockInstallOptions) => {
     var toY = this.getTitleValue('TO_Y');
     var toZ = this.getTitleValue('TO_Z');
     var item = Blockly.JavaScript.valueToCode(this, 'ITEM', Blockly.JavaScript.ORDER_NONE);
-    return `fill('block_id_${this.id}','${createBlockPos(fromX, fromY, fromZ, fromPositionType)}','${createBlockPos(toX, toY, toZ, toPositionType)}',${item}['name'],${item}['data']);`;
+    return `log("hello world")`;
   };
 
   blockly.Blocks.craft_give = {

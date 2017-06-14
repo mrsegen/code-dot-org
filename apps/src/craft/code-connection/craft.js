@@ -209,6 +209,9 @@ export const executeUserCode = function (client, code) {
   };
 
   const methods = {
+    log: function (str) {
+      console.log('log called with ' + str);
+    },
     item: function (blockID, name, data) {
       studioApp().highlight(blockID);
       return { 'name': name, 'data': data };
