@@ -48,6 +48,7 @@ const TeacherHomepage = React.createClass({
           sections={sections}
           codeOrgUrlPrefix={codeOrgUrlPrefix}
           isRtl={isRtl}
+          isTeacher={true}
         />
         <RecentCourses
           courses={courses}
